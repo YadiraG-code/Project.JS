@@ -120,11 +120,13 @@ img {
 .movies {
     display: flex;
     flex-wrap: wrap;
+    margin-right: 32px;
 }
 
 .movie {
     width: 50%;
     padding: 24px;
+    margin-left: 32px;
 }
 
 .movie__img {
@@ -136,10 +138,10 @@ img {
 }
 
 .movie__img--wrapper {
+    display: flex;
+    overflow: hidden;
     margin-bottom: 7px;
     border-radius: 3px;
-    overflow: hidden;
-    display: flex;
     
 }
 
