@@ -141,6 +141,12 @@ img {
     cursor: not-allowed;
 }
 
+h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
 /* MOVIES */
 
 .movies {
