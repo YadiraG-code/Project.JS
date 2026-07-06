@@ -156,6 +156,7 @@ h2 {
 /* MOVIES */
 
 .movies {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -196,8 +197,8 @@ h2 {
 
 
 .movie__container {
-    padding: 20px 16px;
-    
+    padding: 50px 70px;
+    max-width: fit-content;
 }
 
 /* FOOTER */
