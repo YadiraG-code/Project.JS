@@ -1,10 +1,20 @@
-// get all dropdowns from the document 
-const dropdowns = document.querySelectorAll('.dropdown');
+const letterLinks = document.querySelector("[data-letter]");
+letterLinks.forEach(link => {
+    linke.addEventListener("click", (e) => {
+        e.preventDefault();
 
-dropdowns.forEach(dropdown => {
-    const select = dropdown.querySelector('.select');
-    const menu = dropdown.querySelector('.menu');
-    const options = dropdown.querySelectorAll('.menu li');
-})
+        const range = link.dataset.letter;
+        console.log(range);
+        // Call function to display movies here
+    });
+});
 
-console.log(dropdowns)
+const filteredMovies = movies.filter(movie => {
+    const firstLetter = movie.title[0].toUpperCase();
+
+    if (range === "A-E") return firstLetter >= "A" && firstLetter <= "E";
+    if (range === "F-J") return firstLetter >= "F" && firstLetter <= "J";
+    if (range === "O-S") return firstLetter >= "O" && firstLetter <= "S";
+    if (range === "T-W") return firstLetter >= "T" && firstLetter <= "W";
+    if (range === "X-Z") return firstLetter >= "X" && firstLetter <= "Z";
+});
