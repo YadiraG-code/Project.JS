@@ -19,11 +19,11 @@
         <li class="dropdown">
         <a class="select">A-Z</a>
         <ul class="dropdown-menu">
-          <li><a href="#">A-E</a></li>
-          <li><a href="#">F-J</a></li>
-          <li><a href="#">O-S</a></li>
-          <li><a href="#">T-W</a></li>
-          <li><a href="#">X-Z</a></li>
+          <li><a href="#" data-letter="A-E">A-E</a></li>
+          <li><a href="#" data-letter="F-J">F-J</a></li>
+          <li><a href="#" data-letter="O-S">O-S</a></li>
+          <li><a href="#" data-letter="T-W">T-W</a></li>
+          <li><a href="#" data-letter="X-Z">X-Z</a></li>
         </ul>
         </li>
         <li class="dropdown">
@@ -37,8 +37,10 @@
         </li>
       </ul>
       <form class="search-form">
-        <input type="search" placeholder="search">
-        <button type="submit">🔎</button>
+        <input type="text" 
+        id="searchInput"
+        placeholder="search movies...">
+        <button id="searchButton">🔎</button>
       </form>
     </div>
     </nav>

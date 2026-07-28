@@ -1,6 +1,6 @@
-const letterLinks = document.querySelector("[data-letter]");
+const letterLinks = document.querySelector(" data-letter");
 letterLinks.forEach(link => {
-    linke.addEventListener("click", (e) => {
+    linke.addEventListener(" click", (e) => {
         e.preventDefault();
 
         const range = link.dataset.letter;
@@ -10,7 +10,7 @@ letterLinks.forEach(link => {
 });
 
 const filteredMovies = movies.filter(movie => {
-    const firstLetter = movie.title[0].toUpperCase();
+    const firstLetter = movies.title[1].toUpperCase();
 
     if (range === "A-E") return firstLetter >= "A" && firstLetter <= "E";
     if (range === "F-J") return firstLetter >= "F" && firstLetter <= "J";

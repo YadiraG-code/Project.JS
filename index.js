@@ -1,11 +1,25 @@
-// API 1: "http://www.omdbapi.com/?i=tt3896198&apikey=ed322d71"
-// API 2: "http://www.omdbapi.com/apikey.aspx?VERIFYKEY=2820092f-1154-4477-b6a8-4f9a3879f570";
+// API 1: "https://www.omdbapi.com/apikey.aspx?VERIFYKEY=2820092f-1154-4477-b6a8-4f9a3879f570"
+// API 2: "https://www.omdbapi.com/apikey.aspx?VERIFYKEY=2820092f-1154-4477-b6a8-4f9a3879f570";
 
-fetch('http://www.omdbapi.com/?i=tt3896198&apikey=ed322d71&s=SEARCH_TERM')
+const apikey = 'https://www.omdbapi.com/apikey.aspx?VERIFYKEY=2820092f-1154-4477-b6a8-4f9a3879f570';
+let movie = [];
+
+// Search OMDb
+function searchMovie(term) {
+    fetch(`https://www.omdbapi.com/?apikey=${apikey}&s=${encodeURIComponent(term)}`)
 .then(response => response.json())
 .then(data => {
-    function filterMovies(range, movies) {
-        return movies.filter(movie => {
+    movies = data.Search || [];
+    displayMovies(movies);
+})
+.catch(error => {
+    console.error("Error:", error);
+});
+}
+
+// A-Z filtering
+function filterMovies(range, movies) {
+        return movie.filter(movie => {
             const letter = movie.Title[0].toUpperCase();
 
             switch (range) {
@@ -26,14 +40,11 @@ fetch('http://www.omdbapi.com/?i=tt3896198&apikey=ed322d71&s=SEARCH_TERM')
     }
 
     document.querySelectorAll("[data-letter]").forEach(link => {
-        link.addEventListener("click", e => {
-            e.preventDefault();
+        link.addEventListener("click", event => {
+            event.preventDefault();
             const range = link.dataset.letter;
             const filtered = filterMovies(range, movies);
 
             displayMovies(filtered);
         });
     });
-
-    displayMovies(data.Search);
-});
